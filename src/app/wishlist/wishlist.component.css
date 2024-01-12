@@ -1,0 +1,45 @@
+mat-card {
+    width: 100%; 
+    max-width: 200px; 
+    margin: 40px auto; 
+    margin-left: -20px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  mat-card:hover {
+    transform: scale(1.03);
+  }
+  
+  mat-card-content {
+    text-align: center;
+  }
+  
+  .mat-card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin: 0;
+    padding: 8px 0;
+    position: relative;
+  }
+  
+  .mat-card-title:hover::before {
+    content: attr(title); 
+    white-space: normal; 
+    position: absolute;
+    top: 0;
+    left: 110%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 8px;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    display: block;
+    width: max-content; 
+  }
+  
+.container{
+  height: 100%;
+}

@@ -1,0 +1,25 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+.navbar .navbar-brand
+{
+    color: #996f8e;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link
+{
+    color: #996f8e;
+    margin-left: 10px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar{
+    background: rgb(229 229 222) !important;
+}
+
+.footer{
+    background: #514d4d  !important;
+    padding: 27px;
+    
+}
