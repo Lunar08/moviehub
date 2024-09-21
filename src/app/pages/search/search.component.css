@@ -1,0 +1,21 @@
+button
+{
+    background-color: #242123;
+    color: #ffffff;
+}
+
+button:hover
+{
+    background-color: #c58fb3;
+    color: #625e5e;
+}
+
+img{
+    width: 100%;
+    cursor: pointer;
+}
+
+h5
+{
+    color: #ffffff;
+}

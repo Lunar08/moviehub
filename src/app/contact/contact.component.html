@@ -1,0 +1,40 @@
+  <div class="background">
+    <div class="container">
+      <div class="screen">
+        <div class="screen-header">
+          <div class="screen-header-left">
+            <div class="screen-header-button close"></div>
+            <div class="screen-header-button maximize"></div>
+            <div class="screen-header-button minimize"></div>
+          </div>
+          <div class="screen-header-right">
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+          </div>
+        </div>
+        <div class="screen-body">
+          <div class="screen-body-item left">
+            <div class="app-title">
+              <span>CONTACT</span>
+              <span>US</span>
+            </div>
+            <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
+          </div>
+        <div class="screen-body-item">
+          <div class="app-form">
+            <form action="https://formspree.io/f/moqgagjb" method="POST" class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <input formControlName="name" placeholder="FULL NAME">
+              <input formControlName="email" placeholder="EMAIL">
+              <input formControlName="contactNo" placeholder="CONTACT NO">
+              <input formControlName="message" placeholder="MESSAGE">
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <div class="row">
+    <ng-container *ngFor="let movie of wishlist">
+      <div class="col-lg-2 col-md-3 col-sm-5">
+        <mat-card class="mb-4">
+          <img mat-card-image src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" [routerLink]="['/movie', movie.id]">
+          <mat-card-content>
+            <h2 mat-card-title [title]="movie.original_title">{{ movie.original_title }}</h2>
+            <!-- Add more movie details or buttons here if needed -->
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </ng-container>
+  </div>
+</div>
