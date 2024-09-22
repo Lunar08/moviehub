@@ -1,31 +1,25 @@
-name: Deploy GitHub Pages  
-
+name: Deploy to GitHub Pages  
 on:  
   push:  
     branches:  
-      - main  # Change this to your default branch if different  
-
+      - main  
 jobs:  
-  deploy:  
+  build:  
     runs-on: ubuntu-latest  
-
     steps:  
-    - name: Checkout repository  
-      uses: actions/checkout@v2  
+      - name: Checkout code  
+        uses: actions/checkout@v2  
 
-    - name: Set up Node.js  
-      uses: actions/setup-node@v2  
-      with:  
-        node-version: '14'  
+      - name: Set up Node.js  
+        uses: actions/setup-node@v2  
+        with:  
+          node-version: '14'  
 
-    - name: Install dependencies  
-      run: npm install  
+      - name: Install dependencies  
+        run: npm install  
 
-    - name: Build the site  
-      run: npm run build  
+      - name: Build the project  
+        run: ng build --prod --output-path=dist/showtime/browser --base-href "https://lunar08.github.io/moviehub/"  
 
-    - name: Deploy to GitHub Pages  
-      uses: peaceiris/actions-gh-pages@v3  
-      with:  
-        github_token: ${{ secrets.GITHUB_TOKEN }}  
-        publish_dir: ./src  # Change this to your build output directory if different  
+      - name: Deploy to GitHub Pages  
+        run: npx angular-cli-ghpages --dir
