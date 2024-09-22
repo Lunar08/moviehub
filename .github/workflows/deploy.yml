@@ -22,7 +22,7 @@ jobs:
       run: npm install  
   
     - name: Build the project  
-      run: npm run build -- --prod --output-path=dist/showtime/browser --base-href "https://lunar08.github.io/moviehub/"  
+      run: npm run build -- --configuration production --output-path=dist/showtime/browser --base-href "https://lunar08.github.io/moviehub/"  
   
     - name: Deploy to GitHub Pages  
       run: npx angular-cli-ghpages --dir=dist/showtime/browser  
