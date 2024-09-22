@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:  
   push:  
     branches:  
-      - master
+      - main  
   
 jobs:  
   build:  
@@ -11,18 +11,18 @@ jobs:
       
     steps:  
     - name: Checkout code  
-      uses: actions/checkout@v2  
+      uses: actions/checkout@v3 # Updated to v3  
   
     - name: Set up Node.js  
-      uses: actions/setup-node@v2  
+      uses: actions/setup-node@v3 # Updated to v3  
       with:  
-        node-version: '14'  
+        node-version: '16' # Specify Node.js 16  
   
     - name: Install dependencies  
       run: npm install  
   
     - name: Build the project  
-      run: ng build --prod --output-path=dist/showtime/browser --base-href "https://lunar08.github.io/moviehub/"  
+      run: npm run build --prod -- --output-path=dist/showtime/browser --base-href "https://lunar08.github.io/moviehub/"  
   
     - name: Deploy to GitHub Pages  
       run: npx angular-cli-ghpages --dir=dist/showtime/browser  
