@@ -1,25 +1,30 @@
 name: Deploy to GitHub Pages  
+  
 on:  
   push:  
     branches:  
       - main  
+  
 jobs:  
   build:  
     runs-on: ubuntu-latest  
+      
     steps:  
-      - name: Checkout code  
-        uses: actions/checkout@v2  
-
-      - name: Set up Node.js  
-        uses: actions/setup-node@v2  
-        with:  
-          node-version: '14'  
-
-      - name: Install dependencies  
-        run: npm install  
-
-      - name: Build the project  
-        run: ng build --prod --output-path=dist/showtime/browser --base-href "https://lunar08.github.io/moviehub/"  
-
-      - name: Deploy to GitHub Pages  
-        run: npx angular-cli-ghpages --dir
+    - name: Checkout code  
+      uses: actions/checkout@v2  
+  
+    - name: Set up Node.js  
+      uses: actions/setup-node@v2  
+      with:  
+        node-version: '14'  
+  
+    - name: Install dependencies  
+      run: npm install  
+  
+    - name: Build the project  
+      run: ng build --prod --output-path=dist/showtime/browser --base-href "https://lunar08.github.io/moviehub/"  
+  
+    - name: Deploy to GitHub Pages  
+      run: npx angular-cli-ghpages --dir=dist/showtime/browser  
+      env:  
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
